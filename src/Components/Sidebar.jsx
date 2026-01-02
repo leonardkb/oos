@@ -1,13 +1,17 @@
+import { NavLink } from "react-router-dom";
+
 const menu = [
-  "Dashboard",
-  "Production Lines",
-  "Finished Warehouse",
-  "Fabric Relaxation",
-  "Cutting & Spreading",
-  "AI Chatbot",
+  { label: "Dashboard", path: "/" },
+  { label: "Production Lines", path: "/production" },
+  { label: "Finished Warehouse", path: "/finished-warehouse" },
+  { label: "Fabric Relaxation", path: "/fabric-relaxation" },
+  { label: "Cutting & Spreading", path: "/cutting-spreading" },
+  { label: "AI Chatbot", path: "/chatbot" },
 ];
 
 export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
+  const closeOnMobile = () => setSidebarOpen(false);
+
   return (
     <>
       {/* Overlay (mobile/tablet) */}
@@ -22,23 +26,27 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
 
       {/* Sidebar */}
       <aside
-        className={`
-          fixed lg:static z-50
-          h-dvh lg:h-screen w-64
-          bg-slate-900 text-white
-          shadow-xl
-          transform transition-transform duration-300 ease-out
-          ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
-          lg:translate-x-0
-        `}
-      >
-        {/* Container to control spacing */}
+  className={`
+    z-50
+    w-64
+    bg-slate-900 text-white
+    shadow-xl
+    h-screen
+    flex-shrink-0
+
+    fixed top-0 left-0 lg:sticky lg:top-0
+    transform transition-transform duration-300 ease-out
+
+    ${sidebarOpen ? "translate-x-0" : "-translate-x-full"}
+    lg:translate-x-0
+  `}
+>
+
         <div className="flex h-full flex-col">
           {/* Header */}
           <div className="px-5 py-5 flex items-center justify-between border-b border-white/10">
             <h2 className="text-xl font-bold">AI-OOS</h2>
 
-            {/* Close button on mobile */}
             <button
               className="lg:hidden text-white/80 hover:text-white"
               onClick={() => setSidebarOpen(false)}
@@ -52,25 +60,32 @@ export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
           <nav className="flex-1 overflow-y-auto px-3 py-4">
             <ul className="space-y-1">
               {menu.map((item) => (
-                <li key={item}>
-                  <button
-                    className="
-                      w-full text-left
+                <li key={item.path}>
+                  <NavLink
+                    to={item.path}
+                    onClick={closeOnMobile}
+                    className={({ isActive }) =>
+                      `
+                      w-full block
                       px-4 py-2.5 rounded-lg
                       text-sm font-medium
-                      text-white/90
-                      hover:bg-white/10 hover:text-white
                       transition
-                    "
+                      ${
+                        isActive
+                          ? "bg-white/15 text-white ring-1 ring-white/10"
+                          : "text-white/85 hover:bg-white/10 hover:text-white"
+                      }
+                    `
+                    }
                   >
-                    {item}
-                  </button>
+                    {item.label}
+                  </NavLink>
                 </li>
               ))}
             </ul>
           </nav>
 
-          {/* Footer profile (always at bottom, no overlap) */}
+          {/* Footer profile */}
           <div className="px-4 py-4 border-t border-white/10">
             <div className="flex items-center gap-3">
               <img
