@@ -8,7 +8,7 @@ import Chatbot from "../components/Chatbot";
 import ProductionLineTable from "../Components/ProductionLineTables";
 import FinishedGoodsTable from "../Components/FinishedGoodsTable";
 
-export default function Dashboard() {
+export default function DashboardPage() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const [chatOpen, setChatOpen] = useState(false);
 
