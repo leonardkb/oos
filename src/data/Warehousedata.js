@@ -16,3 +16,9 @@ export const orders = [
     risk: "Low"
   }
 ];
+export const inventory = {
+  totalStockPcs: 58300,
+  readyToShipPcs: 42150,
+  pendingQC: 8350,
+  lastUpdated: "Today 10:30 AM",
+};

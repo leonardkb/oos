@@ -16,6 +16,7 @@ import {
 } from "recharts";
 
 import { lines, trendData } from "../data/productionData";
+import Chatbot from "../Components/Chatbot";
 
 /** ---------- UI PRIMITIVES ---------- **/
 function Card({ title, subtitle, children, right }) {
@@ -333,6 +334,7 @@ export default function Production() {
             </div>
           </Card>
         </main>
+        <Chatbot />
       </div>
     </div>
   );
