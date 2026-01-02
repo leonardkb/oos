@@ -1,7 +1,7 @@
 import { NavLink } from "react-router-dom";
 
 const menu = [
-  { label: "Dashboard", path: "/" },
+  { label: "Dashboard", path: "/dashboard" },
   { label: "Production Lines", path: "/production" },
   { label: "Finished Warehouse", path: "/finished-warehouse" },
   { label: "Fabric Relaxation", path: "/fabric-relaxation" },
