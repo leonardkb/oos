@@ -6,7 +6,7 @@ const menu = [
   { label: "Finished Warehouse", path: "/finished-warehouse" },
   { label: "Fabric Relaxation", path: "/fabric-relaxation" },
   { label: "Cutting & Spreading", path: "/cutting-spreading" },
-  { label: "AI Chatbot", path: "/chatbot" },
+  
 ];
 
 export default function Sidebar({ sidebarOpen, setSidebarOpen }) {
