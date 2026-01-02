@@ -151,6 +151,8 @@ export default function FinishedWarehouse() {
         return ad - bd;
       });
   }, [filteredOrders]);
+  const [chatOpen, setChatOpen] = useState(false);
+
 
   return (
     <div className="flex min-h-screen bg-gray-100">
@@ -340,7 +342,7 @@ export default function FinishedWarehouse() {
             </div>
           </Card>
         </main>
-        <Chatbot />
+        <Chatbot chatOpen={chatOpen} setChatOpen={setChatOpen} />
       </div>
     </div>
   );

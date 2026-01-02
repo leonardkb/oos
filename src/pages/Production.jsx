@@ -20,6 +20,7 @@ import Chatbot from "../Components/Chatbot";
 
 /** ---------- UI PRIMITIVES ---------- **/
 function Card({ title, subtitle, children, right }) {
+     
   return (
     <div className="bg-white rounded-2xl border border-gray-100 shadow-sm overflow-hidden">
       <div className="px-5 py-4 border-b border-gray-100 flex items-start justify-between gap-4">
@@ -163,6 +164,7 @@ export default function Production() {
     }));
     return line === "All" ? base : base.filter((x) => x.line === line);
   }, [line]);
+  const [chatOpen, setChatOpen] = useState(false);
 
   return (
     <div className="flex min-h-screen bg-gray-100">
@@ -334,7 +336,7 @@ export default function Production() {
             </div>
           </Card>
         </main>
-        <Chatbot />
+        <Chatbot chatOpen={chatOpen} setChatOpen={setChatOpen} />
       </div>
     </div>
   );

@@ -90,6 +90,7 @@ function Select({ label, value, onChange, options }) {
 
 export default function FabricRelaxation() {
   const [sidebarOpen, setSidebarOpen] = useState(false);
+  const [chatOpen, setChatOpen] = useState(false);
 
   // filters
   const [rack, setRack] = useState("All");
@@ -317,7 +318,7 @@ export default function FabricRelaxation() {
             )}
           </Card>
         </main>
-        <Chatbot />
+        <Chatbot chatOpen={chatOpen} setChatOpen={setChatOpen} />
       </div>
     </div>
   );
