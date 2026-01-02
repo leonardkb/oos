@@ -2,6 +2,7 @@ import { useMemo, useState } from "react";
 import Navbar from "../Components/Navbar";
 import Sidebar from "../Components/Sidebar";
 import { relaxationBatches, racks } from "../data/FabricRelaxationdata";
+import Chatbot from "../Components/Chatbot";
 
 function Card({ title, subtitle, right, children }) {
   return (
@@ -316,6 +317,7 @@ export default function FabricRelaxation() {
             )}
           </Card>
         </main>
+        <Chatbot />
       </div>
     </div>
   );
