@@ -1,9 +1,9 @@
 import { useState } from "react";
-import Navbar from "../components/Navbar";
-import Sidebar from "../components/Sidebar";
-import StatCard from "../components/StatCard";
-import AlertCard from "../components/AlertCard";
-import Chatbot from "../components/Chatbot";
+import Navbar from "../Components/Navbar";
+import Sidebar from "../Components/Sidebar";
+import StatCard from "../Components/StatCard";
+import AlertCard from "../Components/AlertCard";
+import Chatbot from "../Components/Chatbot";
 
 import ProductionLineTable from "../Components/ProductionLineTables";
 import FinishedGoodsTable from "../Components/FinishedGoodsTable";
