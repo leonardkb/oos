@@ -12,6 +12,7 @@ function App() {
   return (
     <Router>
       <Routes>
+       
         <Route path="/" element={<Login />} />
         <Route path="/dashboard" element={<DashboardPage />} />
         <Route path="/production" element={<Production />} />
